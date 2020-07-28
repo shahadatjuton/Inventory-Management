@@ -25,8 +25,8 @@ Route::group(['prefix'=>'profile' ,'middleware'=>['auth']], function (){
     Route::get('/view','ProfileController@index')->name('profile.index');
     Route::get('/edit/{id}','ProfileController@edit')->name('profile.edit');
     Route::put('/update/{id}','ProfileController@update')->name('profile.update');
-    Route::get('/password/','ProfileController@update')->name('profile.update');
-    Route::put('/update/{id}','ProfileController@update')->name('profile.update');
+//    Route::get('/password/','ProfileController@update')->name('profile.update');
+//    Route::put('/update/{id}','ProfileController@update')->name('profile.update');
     Route::get('/password/change','ProfileController@changePassword')->name('password.change');
     Route::put('/password/update/{id}','ProfileController@updatePassword')->name('password.update');
 

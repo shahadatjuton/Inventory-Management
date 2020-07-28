@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b603209-723a-422d-8e3c-d88d9e7bc53c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/InventoryManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/InventoryManagement.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/categoryList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/categoryList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/unit/unitList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/unit/unitList.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -160,7 +157,7 @@
       <option name="presentableId" value="Default" />
       <updated>1595833054473</updated>
       <workItem from="1595833056171" duration="17000" />
-      <workItem from="1595833699262" duration="20387000" />
+      <workItem from="1595833699262" duration="21717000" />
     </task>
     <servers />
   </component>

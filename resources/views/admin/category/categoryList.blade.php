@@ -48,10 +48,6 @@
                     <tr>
                         <th>SL No</th>
                         <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Address</th>
-{{--                        <th>Created By</th>--}}
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -60,10 +56,6 @@
                     <tr>
                         <td>{{$key +1}}</td>
                         <td>{{$category->name}}</td>
-                        <td>{{$category->email}}</td>
-                        <td>{{$category->phone}}</td>
-                        <td>{{$category->address}}</td>
-{{--                        <td>{{$supplier->created_by->user()->name}}</td>--}}
                         <td>
                             <a href="{{route('admin.category.edit',$category->id)}}" class="btn btn-primary btn-sm" title="Edit">
                                 <i class="fa fa-edit"></i>
