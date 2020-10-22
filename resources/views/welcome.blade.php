@@ -80,6 +80,20 @@
             @endif
 
             <div class="content">
+                @php
+                echo DNS1D::getBarcodeSVG('4445645656', 'PHARMA2T');
+                @endphp
+                <hr>
+                @php
+                echo DNS1D::getBarcodeSVG('4445645656', 'PHARMA2T',3,33);
+                @endphp
+                <hr>
+                @php
+                    $barcode = DNS1D::getBarcodeHTML('T007', 'C39');
+                    echo $barcode;
+
+                    echo DNS2D::getBarcodeHTML('4445645656', 'QRCODE');
+                @endphp
                 <div class="title m-b-md">
                     Laravel
                 </div>

@@ -15,7 +15,7 @@ class SupplierController extends Controller
         return view('admin.supplier.supplierList',compact('suppliers'));
     }
     public function create(){
-        return view('admin.customer.createCustomer');
+        return view('admin.supplier.createSupplier');
     }
 
     public function store(Request $request){

@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5b603209-723a-422d-8e3c-d88d9e7bc53c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/categoryList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/categoryList.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/unit/unitList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/unit/unitList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SupplierController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +136,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../php-inventory-management" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -157,7 +155,9 @@
       <option name="presentableId" value="Default" />
       <updated>1595833054473</updated>
       <workItem from="1595833056171" duration="17000" />
-      <workItem from="1595833699262" duration="21717000" />
+      <workItem from="1595833699262" duration="22328000" />
+      <workItem from="1595952989213" duration="1885000" />
+      <workItem from="1596103668121" duration="79000" />
     </task>
     <servers />
   </component>
@@ -169,10 +169,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595920486585" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1595833739653">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1596103743695">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1595833739653" />
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1596103743695" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1596103672718">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1596103672718" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1595841306136">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

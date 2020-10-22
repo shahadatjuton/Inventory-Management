@@ -6,8 +6,8 @@ $route = Route::current()->getName();
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <span class="brand-text font-weight-light">Inventory Management</span>
+    <a href="{{route(Str::slug(Auth::user()->role->name).'.dashboard')}}" class="brand-link">
+      <span class="brand-text font-weight-light">Point Of Sale</span>
     </a>
 
     <!-- Sidebar -->
@@ -18,7 +18,7 @@ $route = Route::current()->getName();
           <img src="{{asset('storage/profile/'.Auth::user()->image)}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{Auth::user()->name}}</a>
+          <a href="{{route(Str::slug(Auth::user()->role->name).'.dashboard')}}" class="d-block">{{Auth::user()->name}}</a>
         </div>
       </div>
 
@@ -28,8 +28,8 @@ $route = Route::current()->getName();
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview {{($prefix == 'admin/user')?'menu-open':''}}">
-                <a href="#" class="nav-link active">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                <a href="#" class="nav-link {{($prefix == 'admin/user')?'active':''}}">
+                    <i class="nav-icon fas fa-user"></i>
                     <p>
                         Manage User
                         <i class="right fas fa-angle-left"></i>
@@ -53,35 +53,9 @@ $route = Route::current()->getName();
                 </ul>
             </li>
 
-            <li class="nav-item has-treeview {{($prefix == '/profile')?'menu-open':''}}">
-                <a href="#" class="nav-link active">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                    <p>
-                        Manage Profile
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{route('profile.index')}}" class="nav-link
-                            {{($route == 'profile.index')? 'active': ''}}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>View Profile</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{route('password.change')}}" class="nav-link
-                            {{($route == 'password.change')? 'active': ''}}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Change Password</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
             <li class="nav-item has-treeview {{($prefix == 'admin/supplier')?'menu-open':''}}">
-                <a href="#" class="nav-link active">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                <a href="#" class="nav-link {{($prefix == 'admin/supplier')?'active':''}}">
+                    <i class="fas fa-suitcase-rolling"></i>
                     <p>
                         Manage Supplier
                         <i class="right fas fa-angle-left"></i>
@@ -106,8 +80,8 @@ $route = Route::current()->getName();
             </li>
 
             <li class="nav-item has-treeview {{($prefix == 'admin/customer')?'menu-open':''}}">
-                <a href="#" class="nav-link active">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                <a href="#" class="nav-link {{($prefix == 'admin/customer')?'active':''}}">
+                    <i class="fas fa-user-tag"></i>
                     <p>
                         Manage Customer
                         <i class="right fas fa-angle-left"></i>
@@ -132,8 +106,8 @@ $route = Route::current()->getName();
             </li>
 
             <li class="nav-item has-treeview {{($prefix == 'admin/unit')?'menu-open':''}}">
-                <a href="#" class="nav-link active">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                <a href="#" class="nav-link {{($prefix == 'admin/unit')?'active':''}}">
+                    <i class="fas fa-balance-scale"></i>
                     <p>
                         Manage Unit
                         <i class="right fas fa-angle-left"></i>
@@ -158,8 +132,8 @@ $route = Route::current()->getName();
             </li>
 
             <li class="nav-item has-treeview {{($prefix == 'admin/category')?'menu-open':''}}">
-                <a href="#" class="nav-link active">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                <a href="#" class="nav-link {{($prefix == 'admin/category')?'active':''}}">
+                    <i class="fas fa-clipboard-list"></i>
                     <p>
                         Manage Category
                         <i class="right fas fa-angle-left"></i>
@@ -182,11 +156,160 @@ $route = Route::current()->getName();
                     </li>
                 </ul>
             </li>
+            <li class="nav-item has-treeview {{($prefix == 'admin/product')?'menu-open':''}}">
+                <a href="#" class="nav-link {{($prefix == 'admin/product')?'active':''}}">
+                    <i class="nav-icon fas fa-shopping-basket"></i>
+                    <p>
+                        Manage Product
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('admin.product.index')}}" class="nav-link
+                            {{($route == 'admin.product.index')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>View Product</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.product.create')}}" class="nav-link
+                            {{($route == 'admin.product.create')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Create Product</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item has-treeview {{($prefix == 'stock')?'menu-open':''}}">
+                <a href="#" class="nav-link {{($prefix == 'stock')?'active':''}}">
+                    <i class="nav-item fas fa-shopping-cart"></i>
+                    <p>
+                        Manage Stock
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('stock.index')}}" class="nav-link
+                            {{($route == 'stock.index')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Present Stock</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item has-treeview {{($prefix == 'admin/purchase')?'menu-open':''}}">
+                <a href="#" class="nav-link {{($prefix == 'admin/purchase')?'active':''}}">
+                    <i class="nav-icon fas fa-shopping-basket"></i>
+                    <p>
+                        Manage Purchase
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('admin.purchase.index')}}" class="nav-link
+                            {{($route == 'admin.purchase.index')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>View Purchase</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.purchase.create')}}" class="nav-link
+                            {{($route == 'admin.purchase.create')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Create Purchase</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="nav-item has-treeview {{($prefix == 'admin/sale')?'menu-open':''}}">
+                <a href="#" class="nav-link {{($prefix == 'admin/sale')?'active':''}}">
+                    <i class="fad fa-comment-alt-dollar"></i>
+                    <p>
+                        Manage Sales
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('admin.sale.index')}}" class="nav-link
+                            {{($route == 'admin.sale.index')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>View Sales</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.sale.create')}}" class="nav-link
+                            {{($route == 'admin.sale.create')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Create Sale</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item has-treeview {{($prefix == '/profile')?'menu-open':''}}">
+                <a href="#" class="nav-link {{($prefix == '/profile')?'active':''}}">
+                    <i class="fas fa-chart-bar"></i>
+                    <p>
+                        Report
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('profile.index')}}" class="nav-link
+                            {{($route == 'profile.index')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Product Report</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('password.change')}}" class="nav-link
+                            {{($route == 'password.change')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Sales Report</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item has-treeview {{($prefix == '/profile')?'menu-open':''}}">
+                <a href="#" class="nav-link {{($prefix == '/profile')?'active':''}}">
+                    <i class="nav-icon far fa-user-circle"></i>
+                    <p>
+                        Manage Profile
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('profile.index')}}" class="nav-link
+                            {{($route == 'profile.index')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>View Profile</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('password.change')}}" class="nav-link
+                            {{($route == 'password.change')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Change Password</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
             <li class="nav-item has-treeview ">
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                   document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt"></i>
                     {{ __('Logout') }}
                 </a>
 

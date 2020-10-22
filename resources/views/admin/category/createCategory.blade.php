@@ -37,7 +37,7 @@
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card">
               <div class="card-header">
-               <h4>Add User</h4>
+               <h4>Add Category</h4>
                   <a class="btn btn-success btn-sm float-right " href="{{route('admin.category.index')}}">
                       <i class="fa fa-list"> Category List</i>
                   </a>
