@@ -112,6 +112,17 @@ Route::group(['as'=>'admin.', 'prefix'=>'admin', 'namespace'=>'Admin', 'middlewa
         Route::get('/show/{id}','SaleController@show')->name('sale.show');
         Route::post('cart/','SaleController@cart')->name('sale.cart');
         Route::get('cart/clear','SaleController@cartClear')->name('sale.cart.clear');
+//        Pdf Generation
+        Route::get('/invoice/pdf/','SaleController@pdfInvoice')->name('pdf.invoice');
+
+    });
+
+    Route::group(['prefix'=>'report'], function (){
+        Route::get('/view/daily-sales-report','ReportController@dailySaleReport')->name('report.sale.daily');
+        Route::post('/generate/daily-sales-report','ReportController@generateDailySaleReport')->name('report.dailySale');
+        Route::get('/view/daily-purchase-report','ReportController@dailyPurchaseReport')->name('report.purchase.daily');
+        Route::post('/generate/daily-purchase-report','ReportController@generateDailyPurchaseReport')->name('report.dailyPurchase');
+
     });
 
 

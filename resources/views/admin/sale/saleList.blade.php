@@ -48,7 +48,9 @@
                     <tr>
                         <th>SL No</th>
                         <th>Sale No</th>
+                        <th> No of Products</th>
                         <th> Total Amount </th>
+                        <th> Customer Name </th>
                         <th> Purchase Created </th>
                         <th>Action</th>
                     </tr>
@@ -58,8 +60,10 @@
                     <tr>
                         <td>{{$key +1}}</td>
                         <td>{{$sale->invoice_no}}</td>
+                        <td>{{$sale->count()}}</td>
                         <td>{{$sale->total}}</td>
-                        <td>{{$sale->created_at->diffForHumans()}}</td>
+                        <td>{{$sale->customer->name}}</td>
+                        <td>{{$sale->created_at->format('d-M-Y')}}</td>
                         <td>
                             <a href="{{route('admin.sale.show',$sale->id)}}" class="btn btn-primary btn-sm" title="View Details">
                                 <i class="fa fa-eye"></i>

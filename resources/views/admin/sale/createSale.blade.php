@@ -78,7 +78,7 @@
                             <input type="number" name="selling_price" class="form-control">
                         </div>
                         <div class="form-group col-md-4 offset-5">
-                            <a href="{{route('admin.purchase.index')}}" class="btn btn-dark"> Back </a>
+                            <a href="{{route('admin.sale.index')}}" class="btn btn-dark"> Back </a>
                             <button type="submit" class="btn btn-success"><i class="fa fa-plus-circle">Add Item</i></button>
 {{--                            <a type="submit" class="btn btn-success addEvent" id="addEvent"><i class="fa fa-plus-circle">Add Item</i></a>--}}
                         </div>
@@ -141,8 +141,8 @@
                                 <div class="form-group col-md-3">
                                     <label>Paid Status</label>
                                     <select name="paid_status" id="category_id" class="form-control select2" style="width: 100%;">
-                                        <option selected="selected">Select Status</option>
-                                        <option value="Paid">Paid</option>
+                                        <option >Select Status</option>
+                                        <option value="Paid" selected="selected">Paid</option>
                                         <option value="Due">Due</option>
                                         <option value="Partial">Partial</option>
                                     </select>
@@ -170,7 +170,7 @@
                                 </div>
                                 <div class="form-group col-md-4 offset-5">
                                     <button type="submit" class="btn btn-success">Sale</button>
-                                    <a class="btn btn-danger" href="{{route('admin.purchase.cart.clear')}}">Clear</a>
+                                    <a class="btn btn-danger" href="{{route('admin.sale.cart.clear')}}">Clear</a>
                                 </div>
                             </div>
                         </form>

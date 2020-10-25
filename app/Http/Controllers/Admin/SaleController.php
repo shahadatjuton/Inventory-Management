@@ -7,8 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Model\Category;
 use App\Model\Customer;
 use App\Model\Product;
-use App\Model\Purchase;
-use App\Model\PurchaseDetails;
 use App\Model\Supplier;
 use App\Model\Unit;
 use App\Payment;
@@ -21,6 +19,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class SaleController extends Controller
 {
@@ -58,7 +57,7 @@ class SaleController extends Controller
     }
 
     public function cartClear(){
-        $carts = Cart::where('created_by', Auth::id())->delete();
+        $carts = SaleCart::where('created_by', Auth::id())->delete();
         Toastr::success('Cart Has Been cleared','Success!');
         return redirect()->back();
     }
@@ -173,19 +172,36 @@ class SaleController extends Controller
     }
     public function destroy($id){
 
-        $product = Product::findOrFail($id);
-        $product->delete();
-        Toastr::success('Product has been deleted successfully','Success!!');
-        return redirect()->route('admin.product.index');
+        $sale = Sale::findOrFail($id);
+        $sale->delete();
+        Toastr::success('Sale has been deleted successfully','Success!!');
+        return redirect()->route('admin.sale.index');
     }
 
     public function show($id){
-        $sale = Sale::find($id);
-        $sale_details = SaleDetail::where('sale_id',$id)->get();
-        return view('admin.sale.saleDetails',compact('sale_details','sale'));
+//        $data['date'] = Carbon::now();
+//        $data['sale'] = Sale::find($id);
+//        $data['payment'] = Payment::where('sale_id',$id)->get();
+//        $data['sale_details'] = SaleDetail::where('sale_id',$id)->get();
+            $date  = Carbon::now();
+            $sale = Sale::find($id);
+            $payment = Payment::where('sale_id',$id)->first();
+            $sale_details = SaleDetail::where('sale_id',$id)->get();
+
+//        $pdf = PDF::loadView('admin.sale.saleInvoice', compact('date','sale','payment','sale_details'));
+//        return $pdf->stream('invoice.pdf');
+
+         return view('admin.sale.saleInvoice',compact('date','sale','payment','sale_details'));
     }
 
-    public function lastWeek(){
-        return 'okay';
+    public function pdfInvoice(){
+        $pdf = PDF::loadView('pdf.invoice');
+        return $pdf->stream('invoice.pdf');
+
     }
+
+//$pdf = PDF::loadView('admin.reports.user', compact('users'));
+//return $pdf->stream('user_report.pdf');
+
+
 }

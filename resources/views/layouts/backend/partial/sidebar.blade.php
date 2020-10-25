@@ -263,17 +263,17 @@ $route = Route::current()->getName();
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{route('profile.index')}}" class="nav-link
-                            {{($route == 'profile.index')? 'active': ''}}">
+                        <a href="{{route('admin.report.sale.daily')}}" class="nav-link
+                            {{($route == 'admin.report.sale.daily')? 'active': ''}}">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Product Report</p>
+                            <p>Date Wise Sales Report</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('password.change')}}" class="nav-link
-                            {{($route == 'password.change')? 'active': ''}}">
+                        <a href="{{route('admin.report.purchase.daily')}}" class="nav-link
+                            {{($route == 'admin.report.purchase.daily')? 'active': ''}}">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Sales Report</p>
+                            <p>Date Wise Purchase Report</p>
                         </a>
                     </li>
                 </ul>

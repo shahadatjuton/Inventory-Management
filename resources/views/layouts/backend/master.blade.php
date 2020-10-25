@@ -32,6 +32,9 @@
     <!-- DataTables -->
     <link rel="stylesheet" href="{{asset('assets/backend')}}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="{{asset('assets/backend')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{asset('assets/backend')}}/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="{{asset('assets/backend')}}/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
     <!-- Toaster css -->
     <link rel="stylesheet" href="{{ asset('assets/backend/css/toastr.min.css')}}">
 @stack('css')
@@ -104,7 +107,8 @@
 <!-- jquery-validation -->
 <script src="{{asset('assets/backend')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="{{asset('assets/backend')}}/plugins/jquery-validation/additional-methods.min.js"></script>
-
+<!-- Select2 -->
+<script src="{{asset('assets/backend')}}/plugins/select2/js/select2.full.min.js"></script>
 <script src="{{ asset('assets/backend/js/handlebars.min.js')}}"></script>
 <script src="{{ asset('assets/backend/dist/js/sweetalert2.all.min.js')}}"></script>
 <script src="{{ asset('assets/backend/js/toastr.min.js')}}"></script>
@@ -126,7 +130,13 @@
             "autoWidth": false,
             "responsive": true,
         });
+
     });
+</script>
+<script>
+    $(function () {
+        $('.select2').select2()
+    })
 </script>
 @stack('js')
 </body>

@@ -38,8 +38,12 @@
               <div class="card">
                   <div class="card-header">
                       <h4>Products List</h4>
-                      <a class="btn btn-success btn-sm float-right " href="{{route('admin.sale.create')}}">
-                          <i class="fa fa-plus-circle"> Add Sale </i>
+                      <a class="btn btn-success btn-sm float-right  mr-4" href="{{route('admin.sale.index')}}">
+                          <i class="fa fa-list"> Invoice List </i>
+                      </a>
+
+                      <a class="btn btn-success btn-sm float-right mr-4 " href="{{route('admin.pdf.invoice')}}">
+                        Print Invoice
                       </a>
                   </div><!-- /.card-header -->
                   <div class="card-body">
@@ -47,12 +51,11 @@
                           <thead>
                           <tr>
                               <th>SL No</th>
-                              <th> Sale No </th>
+                              <th> Invoice No </th>
                               <th> Product Name </th>
                               <th> Quantity </th>
                               <th> Price </th>
                               <th> Total </th>
-                              <th>Action</th>
                           </tr>
                           </thead>
                           <tbody>
@@ -64,17 +67,6 @@
                                   <td>{{$sale_detail->quantity}}</td>
                                   <td>{{$sale_detail->unit_price}}</td>
                                   <td>{{$sale_detail->total}}</td>
-                                  <td>
-                                      <button type="button"  class="btn btn-danger waves-effect btn-sm" onclick="deletedata({{$sale_detail->id}})">
-                                          <i class="fas fa-trash-alt"></i>
-                                      </button>
-                                      <form  id="delete-data-{{$sale_detail->id}}" action="{{route('admin.purchase.destroy',$sale_detail->id)}}"
-                                             method="post" style="display:none;"
-                                      >
-                                          @csrf
-                                          @method('DELETE')
-                                      </form>
-                                  </td>
                               </tr>
                           @endforeach
                           </tbody>
