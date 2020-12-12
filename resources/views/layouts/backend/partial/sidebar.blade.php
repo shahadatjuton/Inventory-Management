@@ -1,6 +1,6 @@
 @php
-$prefix = Request::route()->getPrefix();
-$route = Route::current()->getName();
+    $prefix = Request::route()->getPrefix();
+    $route = Route::current()->getName();
 @endphp
 
   <!-- Main Sidebar Container -->
@@ -29,7 +29,7 @@ $route = Route::current()->getName();
                with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview {{($prefix == 'admin/user')?'menu-open':''}}">
                 <a href="#" class="nav-link {{($prefix == 'admin/user')?'active':''}}">
-                    <i class="nav-icon fas fa-user"></i>
+                    <i class="fas fa-users"></i>
                     <p>
                         Manage User
                         <i class="right fas fa-angle-left"></i>
@@ -55,7 +55,7 @@ $route = Route::current()->getName();
 
             <li class="nav-item has-treeview {{($prefix == 'admin/supplier')?'menu-open':''}}">
                 <a href="#" class="nav-link {{($prefix == 'admin/supplier')?'active':''}}">
-                    <i class="fas fa-suitcase-rolling"></i>
+                    <i class="fas fa-truck"></i>
                     <p>
                         Manage Supplier
                         <i class="right fas fa-angle-left"></i>
@@ -181,9 +181,10 @@ $route = Route::current()->getName();
                     </li>
                 </ul>
             </li>
+
             <li class="nav-item has-treeview {{($prefix == 'stock')?'menu-open':''}}">
                 <a href="#" class="nav-link {{($prefix == 'stock')?'active':''}}">
-                    <i class="nav-item fas fa-shopping-cart"></i>
+                    <i class="fas fa-warehouse"></i>
                     <p>
                         Manage Stock
                         <i class="right fas fa-angle-left"></i>
@@ -197,12 +198,19 @@ $route = Route::current()->getName();
                             <p>Present Stock</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.report.lowStock')}}" class="nav-link
+                            {{($route == 'admin.report.lowStock')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Low Stock</p>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
             <li class="nav-item has-treeview {{($prefix == 'admin/purchase')?'menu-open':''}}">
                 <a href="#" class="nav-link {{($prefix == 'admin/purchase')?'active':''}}">
-                    <i class="nav-icon fas fa-shopping-basket"></i>
+                    <i class="fas fa-shopping-bag"></i>
                     <p>
                         Manage Purchase
                         <i class="right fas fa-angle-left"></i>
@@ -229,7 +237,7 @@ $route = Route::current()->getName();
 
             <li class="nav-item has-treeview {{($prefix == 'admin/sale')?'menu-open':''}}">
                 <a href="#" class="nav-link {{($prefix == 'admin/sale')?'active':''}}">
-                    <i class="fad fa-comment-alt-dollar"></i>
+                    <i class="fas fa-cart-plus"></i>
                     <p>
                         Manage Sales
                         <i class="right fas fa-angle-left"></i>
@@ -253,8 +261,8 @@ $route = Route::current()->getName();
                 </ul>
             </li>
 
-            <li class="nav-item has-treeview {{($prefix == '/profile')?'menu-open':''}}">
-                <a href="#" class="nav-link {{($prefix == '/profile')?'active':''}}">
+            <li class="nav-item has-treeview {{($prefix == 'admin/report')?'menu-open':''}}">
+                <a href="#" class="nav-link {{($prefix == 'admin/report')?'active':''}}">
                     <i class="fas fa-chart-bar"></i>
                     <p>
                         Report
@@ -279,9 +287,35 @@ $route = Route::current()->getName();
                 </ul>
             </li>
 
+            <li class="nav-item has-treeview {{($prefix == 'admin/expenditure')?'menu-open':''}}">
+                <a href="#" class="nav-link {{($prefix == 'admin/expenditure')?'active':''}}">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <p>
+                        Manage Expenditure
+                        <i class="right fas fa-donate-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('admin.expenditure.index')}}" class="nav-link
+                            {{($route == 'admin.expenditure.index')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>View Expenditure List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.expenditure.create')}}" class="nav-link
+                            {{($route == 'admin.expenditure.create')? 'active': ''}}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Create Expenditure</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
             <li class="nav-item has-treeview {{($prefix == '/profile')?'menu-open':''}}">
                 <a href="#" class="nav-link {{($prefix == '/profile')?'active':''}}">
-                    <i class="nav-icon far fa-user-circle"></i>
+                    <i class="fas fa-user-circle"></i>
                     <p>
                         Manage Profile
                         <i class="right fas fa-angle-left"></i>

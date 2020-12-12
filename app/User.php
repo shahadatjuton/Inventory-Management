@@ -43,5 +43,7 @@ class User extends Authenticatable
     public function carts(){
         return $this->hasMany('App\Cart');
     }
-
+    public function expenditures(){
+        return $this->hasMany('App\Model\Expenditure');
+    }
 }

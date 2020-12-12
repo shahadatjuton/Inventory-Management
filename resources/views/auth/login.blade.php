@@ -33,7 +33,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" autofocus>
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="admin@gmail.com" placeholder="Email" required autocomplete="email" autofocus>
 
                     @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -46,7 +46,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                     </div>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="current-password">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="admin1234" placeholder="Password" required autocomplete="current-password">
 
                     @error('password')
                     <span class="invalid-feedback" role="alert">

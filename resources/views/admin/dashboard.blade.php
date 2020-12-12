@@ -26,7 +26,7 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-2 col-6">
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
@@ -37,11 +37,11 @@
                             <div class="icon">
                                 <i class="ion ion-bag"></i>
                             </div>
-                            <a href="{{route('admin.purchase.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('admin.sale.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-2 col-6">
                         <!-- small box -->
                         <div class="small-box bg-gradient-secondary">
                             <div class="inner">
@@ -52,11 +52,11 @@
                             <div class="icon">
                                 <i class="ion ion-bag"></i>
                             </div>
-                            <a href="{{route('admin.purchase.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('admin.report.sale.lastWeek')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-2 col-6">
                         <!-- small box -->
                         <div class="small-box bg-dark">
                             <div class="inner">
@@ -66,11 +66,39 @@
                             <div class="icon">
                                 <i class="ion ion-bag"></i>
                             </div>
-                            <a href="{{route('admin.purchase.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('admin.report.sale.lastMonth')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-2 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3>{{$total_purchase_amount}}</h3>
+
+                                <p>Total Purchase Amount</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-2 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3>{{$total_sale_amount}}</h3>
+
+                                <p>Total Sales Amount</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-2 col-6">
                         <!-- small box -->
                         <div class="small-box bg-danger">
                             <div class="inner">
@@ -143,37 +171,6 @@
                     <!-- ./col -->
                 </div>
                 <!-- /.row -->
-                <!-- Main row -->
-                <div class="row">
-                    <!-- Left col -->
-                    <section class="col-lg-12 connectedSortable">
-                        <!-- Custom tabs (Charts with tabs)-->
-                        <div class="card">
-                            <div class="card-header">
-
-                                <div class="card-tools">
-
-                                </div>
-                            </div><!-- /.card-header -->
-                            <div class="card-body">
-                                <div class="tab-content p-0">
-                                    <!-- Morris chart - Sales -->
-                                    <div class="chart tab-pane active" id="revenue-chart"
-                                         style="position: relative; height: 300px;">
-                                        <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
-                                    </div>
-                                    <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                                        <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
-                                    </div>
-                                </div>
-                            </div><!-- /.card-body -->
-                        </div>
-                        <!-- /.card -->
-                        <!-- /.card -->
-                    </section>
-                    <!-- /.Left col -->
-                </div>
-                <!-- /.row (main row) -->
             </div><!-- /.container-fluid -->
         </section>
         <!-- /.content -->
@@ -181,3 +178,29 @@
     <!-- /.content-wrapper -->
 
 @endsection
+
+@push('js')
+{{--    <script>--}}
+{{--        window.onload = function () {--}}
+
+{{--            var chart = new CanvasJS.Chart("chartContainer", {--}}
+{{--                animationEnabled: true,--}}
+{{--                exportEnabled: true,--}}
+{{--                theme: "light1", // "light1", "light2", "dark1", "dark2"--}}
+{{--                title:{--}}
+{{--                    text: "PHP Column Chart from Database"--}}
+{{--                },--}}
+{{--                data: [{--}}
+{{--                    type: "column", //change type to bar, line, area, pie, etc--}}
+{{--                    dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>--}}
+{{--                }]--}}
+{{--            });--}}
+{{--            chart.render();--}}
+
+{{--        }--}}
+{{--    </script>--}}
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<!-- ChartJS -->
+<script src="{{asset('assetes/backend/')}}/plugins/chart.js/Chart.min.js"></script>
+
+@endphp

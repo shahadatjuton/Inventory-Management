@@ -49,7 +49,9 @@
                         <th>SL No</th>
                         <th>Product Image</th>
                         <th>Product Name</th>
+                        <th>Supplier Name</th>
                         <th>Quantity</th>
+                        <th>Regime</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -60,7 +62,9 @@
                             <img src="{{asset('storage/product/'.$product->image)}}" alt="{{$product->name}}'Images" height="40" width="60">
                         </td>
                         <td>{{$product->name}}</td>
+                        <td>{{$product->supplier->name}}</td>
                         <td>{{$product->quantity}}</td>
+                        <td>{{$product->updated_at->diffForHumans()}}</td>
                     </tr>
                         @endforeach
                     </tbody>

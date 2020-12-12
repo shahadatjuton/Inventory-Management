@@ -79,9 +79,6 @@ class UserController extends Controller
         return redirect()->route('admin.user.index');
     }
 
-    public function test($id){
-        dd($id);
-    }
 
     public function edit($id){
         $user = User::findOrFail($id);

@@ -122,9 +122,23 @@ Route::group(['as'=>'admin.', 'prefix'=>'admin', 'namespace'=>'Admin', 'middlewa
         Route::post('/generate/daily-sales-report','ReportController@generateDailySaleReport')->name('report.dailySale');
         Route::get('/view/daily-purchase-report','ReportController@dailyPurchaseReport')->name('report.purchase.daily');
         Route::post('/generate/daily-purchase-report','ReportController@generateDailyPurchaseReport')->name('report.dailyPurchase');
+        Route::get('/last-week/sales-report/','ReportController@lastWeekSaleReport')->name('report.sale.lastWeek');
+        Route::get('/last-month/sales-report/','ReportController@lastMonthSaleReport')->name('report.sale.lastMonth');
 
+//        Stock Report
+        Route::get('/products/low-stock/','ReportController@lowStock')->name('report.lowStock');
+        Route::get('/test','ReportController@test')->name('test.pdf');
     });
 
+
+    Route::group(['prefix'=>'expenditure'], function (){
+        Route::get('/view','ExpenditureController@index')->name('expenditure.index');
+        Route::get('/create','ExpenditureController@create')->name('expenditure.create');
+        Route::post('/store','ExpenditureController@store')->name('expenditure.store');
+        Route::get('/edit/{id}','ExpenditureController@edit')->name('expenditure.edit');
+        Route::put('/update/{id}','ExpenditureController@update')->name('expenditure.update');
+        Route::delete('/destroy/{id}','ExpenditureController@destroy')->name('expenditure.destroy');
+    });
 
 });
 

@@ -47,20 +47,25 @@
                     <thead>
                     <tr>
                         <th>SL No</th>
+                        <th>Barcode</th>
                         <th>Product Image</th>
                         <th>Supplier</th>
                         <th>Category</th>
                         <th>Name</th>
                         <th>Unit</th>
-                        <th>Buying Price</th>
-                        <th>Selling Price</th>
+                        <th>Quantity</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($products as $key=>$product)
                     <tr>
-                        <td>{{$key +1}}</td>
+                        <td>{{$key +1}} </td>
+                        <td>
+                            @php
+                                echo DNS1D::getBarcodeHTML($product->barcode, 'C39',1,40);
+                            @endphp
+                        </td>
                         <td>
                             <img src="{{asset('storage/product/'.$product->image)}}" alt="{{$product->name}}'Images" height="40" width="60">
                         </td>
@@ -68,8 +73,7 @@
                         <td>{{$product->category->name}}</td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->unit->name}}</td>
-                        <td>{{$product->buying_price}}</td>
-                        <td>{{$product->selling_price}}</td>
+                        <td>{{$product->quantity}}</td>
                         <td>
                             <a href="{{route('admin.product.edit',$product->id)}}" class="btn btn-primary btn-sm" title="Edit">
                                 <i class="fa fa-edit"></i>

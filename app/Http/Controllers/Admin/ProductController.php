@@ -90,7 +90,6 @@ class ProductController extends Controller
             'quantity'=>'required',
             'product_code'=>'required',
         ]);
-
         $product = Product::findOrFail($id);
         $product->name = $request->name;
         $product->supplier_id= $request->supplier_id;
